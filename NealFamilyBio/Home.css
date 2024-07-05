@@ -1,0 +1,84 @@
+    /*Background Configuration*/
+    html {
+        height: 100%;
+        min-height: 100%;}
+    body {
+        background-color: rgb(56, 56, 56);
+        background-image: linear-gradient(to bottom,rgba(35, 99, 122, 0.5), rgba(92, 10, 78, 0.5));
+        width: 90em;
+        height: auto;}
+    /*Header Configuration*/
+    h1, h2, h3, p{
+        text-align: center;}
+    h4{
+        color: rgb(23, 96, 156);
+        font-weight: bold;}
+    h4:hover{
+        color: pink;}
+    
+/*Title Configuration*/
+    .title-container{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 35px;
+        color: rgba(32, 34, 32, 0.75);
+        width: 100%;
+        top: 2px;
+        left: 0px;
+        right: 0px;
+        border-style: solid;
+        border-width: 1px;}
+    .title{
+        background-color: rgba(0, 0, 0, 0.03);
+        width: 95%;
+        height: 50%;}
+/*Dropdown Menu Configuration*/
+    .dropdown {
+        position: relative;
+        display: inline-block; }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #1522214d;
+        min-width: auto;
+        box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.25);
+        padding: 10px 25px 25px 25px;
+        z-index: 1;
+        font-size: 15px;
+        text-align: left;
+        line-height: 200%;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: rgba(18, 163, 90, 0.25);
+        border-width: 1px; }
+      .dropdown:hover .dropdown-content {
+        display: block; }
+/*Photo Configuration*/
+    img{
+        box-shadow: 2px 2px 20px 20px rgba(0,0,0,0.25);
+        max-width: 75%;
+        height: auto;
+        border-radius: 50%;}
+    .grid-container {
+        display: grid;
+        position:absolute;
+        grid-template-columns: auto auto auto;
+        gap: 10%;
+        background-color: #5151520e;
+        padding: 5%;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right:5%;}
+      .photo1 {
+        grid-row: 1/2;}
+      .photo1:hover, .photo2:hover, .photo3:hover{
+        transform: scale(1.5);}
+      .photo2{
+        grid-row: 1/2;}
+      .photo3{
+        height: 73%;
+        width: 73%;
+        grid-row: 1/2;}
+      
