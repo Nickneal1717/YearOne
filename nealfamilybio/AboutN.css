@@ -4,7 +4,7 @@ html {
     }
 body{
     background-color: rgb(56, 56, 56);
-    background-image: linear-gradient(to bottom,rgba(35, 99, 122, 0.5), rgba(92, 10, 78, 0.5));
+    background-image: linear-gradient(to bottom,rgba(35, 99, 122, 0.5), rgba(0, 0, 0, 0.5));
     width: auto;
     height: auto;
     font-size:20px;
@@ -63,8 +63,8 @@ i{
     border-left-style: solid;
     border-right-style: solid;
     border-radius: 10px;
-    padding-top: 15px;
-    text-align: center;}
+    margin-top: 5%;
+    text-align: left;}
 /*Media Configuration*/
 .media-container{
     display: grid;
