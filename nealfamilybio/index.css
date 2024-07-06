@@ -33,9 +33,7 @@ h4:hover{
 /*Dropdown Menu Configuration*/
 .dropdown {
   position: relative;
-  max-width: 5em;
   height: 3rem;
-  color:white;
   padding-top: 0.1em;
   grid-area: 1/3/2/2;}
 .dropdown-btn{
@@ -50,42 +48,38 @@ h4:hover{
   padding-right: 1em;
   padding-top: 0.1em;
   border-radius: 0.3em;
-  cursor: pointer;
-}
+  cursor: pointer;}
 .dropdown-btn:focus + .dropdown-content{
   visibility: visible;
-  transition-delay: calc(2s * var(--delay));
-}
+  transition-delay: calc(2s * var(--delay));}
 .dropdown-content{
   background-color: #1522214d;
   list-style: none;
   position: absolute;
-  border-style: solid;
   padding:0.2em;
-  border-color: rgba(18, 163, 90, 0.25);
-  border-width: 1px; 
-  box-shadow: 0 20px 20px rgba(0,0,0,0.25);
   font-size: 15px;
   z-index: 1;
   visibility: hidden;
   overflow: hidden;
-}
+  border-style: solid;
+  border-color: rgba(18, 163, 90, 0.25);
+  border-width: 1px; }
 .dropdown-content li{
   background: #2f3238;
-  border-radius: 0.5em;
+  border-style: solid;
+  border-color: rgba(18, 163, 90, 0.25);
+  border-width: 1px;
   position: relative;
   transition: 0.5s;
-  transition-delay: calc(60ms * var(--delay));}
+  transition-delay: calc(60ms * var(--delay));
+  font-size: 15px;}
 .dropdown:focus-within .dropdown-content{
-  visibility: visible;
-  background: #2f3238;
-}
+  visibility: visible;}
 .dropdown-content li a{
   display:block;
-  padding:1em 2em;
+  padding:2em 1em;
   color:#fff;
-  text-decoration: none;
-}
+  text-decoration: none;}
 
 /*Photo Configuration*/
 img{
