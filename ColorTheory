@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-</style>
+<style>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colored Markers</title>
   </head
-<style>
+</style>
 /*General Configuration*/
 h1 {
   text-align: center;
