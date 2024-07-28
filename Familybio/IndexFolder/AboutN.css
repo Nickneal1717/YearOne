@@ -23,12 +23,15 @@
     }
     #page-inner-layout > .bio {
         height: auto;
-        width: 100vw;
+        width: 100%;
     }
     #page-inner-layout > #portfolio-container{
-        width: 100vw;
+        width: 100%;
         height: auto;
     }
+    #portfolio-container > img {
+        width: 100%;
+       } 
     #page-layout > footer {
         position: relative;
         width: 100%;
