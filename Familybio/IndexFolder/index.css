@@ -1,108 +1,78 @@
-    /*Background Configuration*/
-html {
-  max-height: 100vh;
-  height:100vh;
-  max-width: auto;}
-body {
-  background-color: rgb(56, 56, 56);
-  background-image: linear-gradient(to bottom,rgba(35, 99, 122, 0.5), rgba(92, 10, 78, 0.5));}
+@media only screen and (max-width: 480px) {
+  /* smartphones */
+}
 
-    /*Header Configuration*/
-h1, h2, h3, h4, p{
-  text-align: center;
-  color: rgb(23, 96, 156);
-  font-weight: bold;}
-h4:hover{
-  color: pink;}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  /* smartphone landscape */
+}
 
-/*Title Configuration*/
-.title-container{
-  position: fixed;
-  display: inline-grid;
-  grid-template-columns: 90rem 5rem;
-  grid-template-rows: auto;
-  text-align: center;
-  font-size: 40px;
-  color: rgba(32, 34, 32, 0.75);
-  top: 0rem;}
-.title{
-  background-color: rgba(0, 0, 0, 0.15);
-  width: 96rem;
-  height: 3rem;
-  grid-area:1/1/2/3;}
-/*Dropdown Menu Configuration*/
-.dropdown {
-  position: relative;
-  height: 3rem;
-  padding-top: 0.1em;
-  grid-area: 1/3/2/2;}
-.dropdown-btn{
-  font-size: 18px;
-  background: rgba(0, 0, 0,0.03);
-  color: rgba(32, 34, 32, 0.75);
-  border: none;
-  height:70%;
-  display:flex;
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* tablet */
+}
+* {
+  box-sizing: border-box;
+}
+html{
+  max-height: 100%;
+  height: 100%;
+  background-color: rgb(10, 10, 0);
+}
+/*Page Layout*/
+#page-layout {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 0.1em;
-  border-radius: 0.3em;
-  cursor: pointer;}
-.dropdown-btn:focus + .dropdown-content{
-  visibility: visible;
-  transition-delay: calc(2s * var(--delay));}
-.dropdown-content{
-  background-color: #1522214d;
-  list-style: none;
-  position: absolute;
-  padding:0.2em;
-  font-size: 15px;
-  z-index: 1;
-  visibility: hidden;
-  overflow: hidden;
-  border-style: solid;
-  border-color: rgba(18, 163, 90, 0.25);
-  border-width: 1px; }
-.dropdown-content li{
-  background: #2f3238;
-  border-style: solid;
-  border-color: rgba(18, 163, 90, 0.25);
-  border-width: 1px;
-  position: relative;
-  transition: 0.5s;
-  transition-delay: calc(60ms * var(--delay));
-  font-size: 15px;}
-.dropdown:focus-within .dropdown-content{
-  visibility: visible;}
-.dropdown-content li a{
-  display:block;
-  padding:2em 1em;
-  color:#fff;
-  text-decoration: none;}
-
-/*Photo Configuration*/
-img{
-  box-shadow: 2px 2px 20px 20px rgba(0,0,0,0.25);
-  max-height: 20em;
-  max-width: 20em;
-  width: 25rem;
-  border-radius: 50%;}
-.grid-container {
-  display: grid;
-  position:absolute;
-  grid-template-columns: auto auto auto;
-  gap: 10%;
-  background-color: #5151520e;
-  padding: 5em;
-  padding-left: 18em;
-  margin-top: 5em;
-  justify-content: center;}
-.photo1:hover, .photo2:hover, .photo3:hover{
-  transform: scale(1.25);}
-.photo1 {
-  grid-row: 1/2;}
-.photo2{
-  grid-row: 1/2;}
-.photo3{
-  grid-row: 1/2;}
+  flex-wrap: wrap;
+}
+  /*Title Configuration*/
+  #page-layout > #title-container{
+    height: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.319);
+    margin: 1% 1% 1% 1%;
+  }
+  /*Photo Configuration*/
+  #page-inner-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 98vw;
+    height: 115%;
+    border: 2px solid rgba(255, 255, 255, 0.319);
+    justify-content: space-around;
+  }
+  .photos{
+    box-shadow: 2px 2px 20px 20px rgba(0,0,0,0.25);
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .photo1:hover, .photo2:hover, .photo3:hover{
+    transform: scale(1.25);
+  }
+  #button-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 2px solid rgba(255, 255, 255, 0.319);
+    width: 10%;
+    height: 15%;
+    margin: 1% 0 0 44.5%;
+    padding: 0.5% 0 0.5% 0;
+    justify-content: center;
+  }
+  .button {
+    color: black;
+    font-size: 25px;
+    width: auto;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    background: orangered;
+    padding: 0 1% 0 1%;
+  }
