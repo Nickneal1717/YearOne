@@ -1,83 +1,68 @@
 @media only screen and (max-width: 480px) {
     /* smartphones */
     body {
-        height: 100%;
         width: 100%;
         background-color: rgb(56, 56, 56);
         background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
-        padding-right: 0.5rem;
+        padding: 0 1% 0 0;
     }
-    #contact-card-container > .contact-card-top{
+    #page-layout{
+        margin: 1% 1% 0 1%;
+    }
+    body > #page-layout > #contact-card-container {
+        width: 100%;
+        padding: 0 0 1% 0;
+    }
+    #page-layout > #page-inner-layout{
         width: 100%;
         height: auto;
-        padding: 0 0 10% 0;
-    }
-
-    #contact-card-container > .contact-card-bottom {
-        width: 100%;
-        height: auto;
-        align-items: center;
-    }
-    #page-inner-layout{
-        width: 100%;
-    }
-    #page-inner-layout > .bio {
-        height: auto;
-        width: 100vw;
     }
     #page-inner-layout > #portfolio-container{
-        width: 100vw;
+        width: 100%;
         height: auto;
     }
     #page-layout > footer {
-        position: relative;
-        width: 100%;
-        margin: 10px;
-        top: 0.25rem;
-        height: auto;
         background-color:rgba(0,0,0,0.2);
         text-align: center;
-        padding-top: 15px;
     }
   }
   
   @media only screen and (min-width: 480px) and (max-width: 768px) {
     /* smartphone landscape */
     body {
-        height: 100%;
         width: 100%;
         background-color: rgb(56, 56, 56);
         background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
-        padding-right: 0.5rem;
+        padding: 0 1% 0 0;
     }
-    #contact-card-container > .contact-card-top{
+    #page-layout{
+        margin: 1% 1% 0 1%;
+    }
+    body > #page-layout > #contact-card-container {
         width: 100%;
-        height: 100%;
-
+        padding: 0;
     }
-
-    #contact-card-container > .contact-card-bottom {
+    #contact-card-container > .contact-card-top {
+        padding: 0 0 8% 0;
+    }
+    .contact-card-top > .contact-card-photo {
+        padding: 0 0 5% 0;
+    }
+    .contact-card-top > .contact-card-photo > img{
+        width: 35%;
+        left: 32%;
+    }
+    #page-layout > #page-inner-layout{
         width: 100%;
         height: auto;
-        align-items: center;
-    }
-    #page-inner-layout > .bio {
-        height: auto;
-        width: 100%;
     }
     #page-inner-layout > #portfolio-container{
         width: 100%;
         height: auto;
     }
     #page-layout > footer {
-        position: relative;
-        width: 100%;
-        margin: 10px;
-        top: 0.25rem;
-        height: auto;
         background-color:rgba(0,0,0,0.2);
         text-align: center;
-        padding-top: 15px;
     }
   }
   
@@ -87,7 +72,7 @@
         height: 100%;
         width: 100%;
         background-color: rgb(56, 56, 56);
-        background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgb(42, 1, 50) );
+        background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
         padding-right: 0.5rem;
     }
     #page-layout > #contact-card-container {
@@ -247,6 +232,9 @@ ul {
             border-width: 2px;
             margin: 5px 0 0 0;
         }
+        .contact-card-bottom > .contact-card-info {
+            padding: 0 0 0 1%;
+        }
     footer {
         width: 100%;
         height: auto;
@@ -265,7 +253,7 @@ ul {
         margin: 1% 1% 0 1%;}
     /*Biography*/
     .bio {
-        padding: 0 1% 0 1%;
+        padding: 0 1% 12% 1%;
         width: 100%;
         height: auto;
         border: 2px solid;
@@ -277,9 +265,8 @@ ul {
     /*Portfolio Flexbox*/
     #portfolio-container {
         display: flex;
-        flex-direction: row;
         width: 100%;
-        max-width: 100%;
+        height: 30%;
         border: 2px solid;
         background-color: rgba(0,0,0,0.2);
         border-image: var(--B1);
@@ -287,41 +274,18 @@ ul {
         margin: 1% 0 0 0;
         align-items: center;
         justify-content: space-evenly;
+        object-fit: cover;
     }
-    #portfolio-container > .project1 {
+    #portfolio-container > a:hover {
+        transform: scale(1.15);
+    }
+    #portfolio-container > .projects {
         border: 1px solid black;
         height: 90%;
         width: 23%;
         margin: 2% 0 2% 0;
-        object-fit: cover;
-
     }
-    .project1 > img {
+    .projects > img {
         width: 100%;
         height: 100%;
-    }
-    #portfolio-container > .project2 {
-        border: 1px solid var(--Test);
-        height: 80%;
-        margin: 2%;
-    }
-    #portfolio-container > .project3 {
-        border: 1px solid var(--Test);
-        height: 80%;
-        margin: 2%;
-    }
-    #portfolio-container > .project4 {
-        border: 1px solid var(--Test);
-        height: 80%;
-        margin: 2%;
-
-    }
-    #portfolio-container > .project5 {
-        border: 1px solid var(--Test);
-        height: 80%;
-        margin: 2%;
-
-    }
-    #portfolio-container > a:hover {
-        transform: scale(1.15);
     }
