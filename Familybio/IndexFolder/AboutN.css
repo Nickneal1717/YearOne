@@ -303,6 +303,7 @@ ul {
     #portfolio-container > .project2 {
         border: 1px solid var(--Test);
         height: 80%;
+        width: 23%;
         margin: 2%;
     }
     #portfolio-container > .project3 {
