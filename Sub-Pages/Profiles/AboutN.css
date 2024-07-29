@@ -32,94 +32,94 @@
     }
   }
   
-  @media only screen and (min-width: 480px) and (max-width: 768px) {
-    /* smartphone landscape */
-    body {
-        width: 100%;
-        background-color: rgb(56, 56, 56);
-        background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
-        padding: 0 1% 0 0;
-    }
-    #page-layout{
-        margin: 1% 1% 0 1%;
-    }
-    body > #page-layout > #contact-card-container {
-        width: 100%;
-        padding: 0;
-    }
-    #contact-card-container > .contact-card-top {
-        padding: 0 0 10% 0;
-        
-    }
-    .contact-card-top > .contact-card-photo {
-        padding: 0 0 5% 0;
-    }
-    .contact-card-top > .contact-card-photo > img{
-        width: 35%;
-        left: 32%;
-    }
-    #page-layout > #page-inner-layout{
-        width: 100%;
-        height: auto;
-    }
-    #page-inner-layout > #portfolio-container{
-        width: 100%;
-        height: auto;
-    }
-    #page-layout > footer {
-        background-color:rgba(0,0,0,0.2);
-        text-align: center;
-    }
-  }
-  
-  @media only screen and (min-width: 768px) and (max-width: 992px) {
-    /* tablet */
-    body {
-        height: 100%;
-        width: 100%;
-        background-color: rgb(56, 56, 56);
-        background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
-        padding-right: 0.5rem;
-    }
-    #page-layout > #contact-card-container {
-        width: 100%;
-    }
-    #contact-card-container > .contact-card-top{
-        width: 100%;
-        height: auto;
-        padding: 0 0 10% 0;
-    }
-    .contact-card-top > .contact-card-photo {
-        align-self: center;
-    }
-    .contact-card-top > .contact-card-photo > img{
-        width: 80%;
-        left: 9%;
-    }
-    #contact-card-container > .contact-card-bottom {
-        width: 100%;
-        height: auto;
-        align-items: center;
-    }
-    #page-inner-layout > .bio {
-        height: auto;
-        width: 100%;
-    }
-    #page-inner-layout > #portfolio-container{
-        width: 100%;
-        height: auto;
-    }
-    #page-layout > footer {
-        position: relative;
-        width: 100%;
-        margin: 10px;
-        top: 0.25rem;
-        height: auto;
-        background-color:rgba(0,0,0,0.2);
-        text-align: center;
-        padding-top: 15px;
-    }
-  }
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+/* smartphone landscape */
+body {
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
+    padding: 0 1% 0 0;
+}
+#page-layout{
+    margin: 1% 1% 0 1%;
+}
+body > #page-layout > #contact-card-container {
+    width: 100%;
+    padding: 0;
+}
+#contact-card-container > .contact-card-top {
+    padding: 0 0 10% 0;
+    
+}
+.contact-card-top > .contact-card-photo {
+    padding: 0 0 5% 0;
+}
+.contact-card-top > .contact-card-photo > img{
+    width: 35%;
+    left: 32%;
+}
+#page-layout > #page-inner-layout{
+    width: 100%;
+    height: auto;
+}
+#page-inner-layout > #portfolio-container{
+    width: 100%;
+    height: auto;
+}
+#page-layout > footer {
+    background-color:rgba(0,0,0,0.2);
+    text-align: center;
+}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+/* tablet */
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(56, 56, 56);
+    background-image: linear-gradient(to bottom,rgba(10, 50, 100,0.5) 80%,rgba(0, 0, 0) );
+    padding-right: 0.5rem;
+}
+#page-layout > #contact-card-container {
+    width: 100%;
+}
+#contact-card-container > .contact-card-top{
+    width: 100%;
+    height: auto;
+    padding: 0 0 10% 0;
+}
+.contact-card-top > .contact-card-photo {
+    align-self: center;
+}
+.contact-card-top > .contact-card-photo > img{
+    width: 80%;
+    left: 9%;
+}
+#contact-card-container > .contact-card-bottom {
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+#page-inner-layout > .bio {
+    height: auto;
+    width: 100%;
+}
+#page-inner-layout > #portfolio-container{
+    width: 100%;
+    height: auto;
+}
+#page-layout > footer {
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    top: 0.25rem;
+    height: auto;
+    background-color:rgba(0,0,0,0.2);
+    text-align: center;
+    padding-top: 15px;
+}
+}
 :root {
     --B1: linear-gradient(50deg,darkblue 47%,rgb(74, 74, 74) 52%) 1;
     --B2: linear-gradient(50deg,rgb(74,74,74)47%, darkblue 52%) 1;
