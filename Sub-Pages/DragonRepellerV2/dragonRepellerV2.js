@@ -60,10 +60,12 @@ const buttons = [
 
 /* Weapons */
 const weapons = [
-  { name: 'stick', power: 5 },
-  { name: 'dagger', power: 30 },
-  { name: 'claw hammer', power: 50 },
-  { name: 'sword', power: 100 }
+  { name: 'fists', power: 5 },
+  { name: 'wooden sword', power: 15},
+  { name: 'bronze sword', power: 30 },
+  { name: 'iron sword', power: 50 },
+  { name: 'steel sword', power: 75 },
+  { name: 'rainbow sword', power: 100}
 ];
 
 /* Monsters */
@@ -83,7 +85,18 @@ const monsters = [
     }
   },
   {
-    name: "fanged beast",
+    name: "goblin",
+    level: 5,
+    health: 75,
+    fightingMultiplier: 1.5,
+    attackValue: function() {
+      const hit = (this.level * 5) - (Math.floor(Math.random() * this.level));
+      console.log(hit);
+      return hit > 0 ? hit : 0;
+    }
+  },
+  {
+    name: "werewolf",
     level: 8,
     health: 60,
     fightingMultiplier: 1,
