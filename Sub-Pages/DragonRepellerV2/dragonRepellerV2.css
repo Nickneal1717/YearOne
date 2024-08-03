@@ -78,92 +78,100 @@
 
 body {
   background-color: #0a0a23;
+  background-image: url("../../Assets/Images/townSquare1.jpg");
+  background-position: center;
+  background-size: cover;
   max-width: 100%;
-  height: auto;
   overflow: hidden;
-  
 }
-#gameContainer{
-  height: 98vh;
-  display: grid;
-  grid-template-areas: 
-  'padTop padTop padTop padTop'
-  'gameArea gameArea gameArea inventoryArea'
-  'dialogArea dialogArea dialogArea inventoryArea';
-}
-#game {
-  grid-area: gameArea;
-  background-color: #ffffff;
-  color: #ffffff;
-  margin-left: 5%;
-  width: 100%;
-}
-#controls,
-#stats {
-  border: 1px solid #0a0a23;
-  padding: 5px;
-  color: #0a0a23;
-  text-align: center;
-}
-#monsterStats {
-  display: none;
-  border: 1px solid #0a0a23;
-  padding: 5px;
-  color: #ffffff;
-  background-color: #c70d0d;
-}
-.stat {
-  padding-right: 10px;
-  font-size: 20px;
-}
-button {
-  cursor: pointer;
-  color: #0a0a23;
-  background-color: #feac32;
-  background-image: linear-gradient(#fecc4c, #ffac33);
-  border: 3px solid #feac32;
-  margin: 0 10% 0 0;
-  font-size: 20px;
-}
-#dialog{
-  grid-area: dialogArea;
-  color: white;
-  margin-left: 5%;
-  display: flex;
-  background-color: #0a0a23;
-  width: 100%;
-  align-items: center;
-}
-.text {
-  background-color: rgb(51, 51, 51);
-  color: #ffffff;
-  font-size: 25px;
-}
-#inventoryContainer{
-  grid-area: inventoryArea;
-  background-color: rgba(96, 96, 96, 0.5);
-  color: white;
-  width: 75%;
-  margin: 0 5% 5% 20%;
-  display: grid;
-  grid-template-rows: 10% 80% 10%;
 
-}
-.inventoryHeader{
-grid-row: 1/2;
-text-align: center;
-font-size: 25px;
-padding-top: 3%;
-border-bottom: 1px solid black;
-}
-.inventoryBody{
-grid-row: 2/3;
-margin: 3% 3% 0 3%;
-}
-.inventoryFooter{
-grid-row: 3/4;
-font-size: 20px;
-margin: 0 3% 0 3%;
-border-top: 1px solid black;
-padding-top: 3%;
-}
+  #gameContainer{
+    height: 98vh;
+    display: grid;
+    grid-template-rows: 15% 15% 15% 15% 15% 25%;
+    grid-template-columns: 20% 15% 15% 15% 15% 20%;
+    position: relative;
+    z-index: 2;
+  }
+    #game {
+      grid-area: 6/2/7/5;
+      margin: 0 0 0 1%;
+      color: #ffffff;
+      width: 100%;
+    }
+      #controls, #stats {
+        border: 1px solid #0a0a23;
+        border-radius: 7%;
+        padding: 10px;
+        color: #ffb50a;
+        text-align: center;
+        background-color: rgba(51, 51, 51,0.85);
+      }
+      strong {
+        color: #00bd48;
+      }
+      #monsterStats {
+        display: none;
+        border: 1px solid #0a0a23;
+        padding: 5px;
+        color: #ffffff;
+        background-color: #591c1c;
+      }
+        .stat {
+          padding-right: 10px;
+          font-size: 20px;
+        }
+      button {
+        cursor: pointer;
+        color: #0a0a23;
+        background-color: #feac32;
+        background-image: linear-gradient(#fecc4c, #ffac33);
+        border: 3px solid #feac32;
+        margin: 0 10% 0 0;
+        font-size: 20px;
+      }
+    #dialog{
+      grid-area: 2/2/3/5;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+      .text {
+        background-color: rgba(51, 51, 51,0.85);
+        color: #00bd48;
+        font-size: 25px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 3%;
+      }
+  #inventoryContainer{
+    grid-area: 3/6/7/7;
+    background-color: rgba(51, 51, 51,0.85);
+    color: rgb(206, 205, 207);
+    width: auto;
+    margin: 0 2% 0 0%;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    border: 2px solid black;
+    border-radius: 2.5%;
+  }
+    .inventoryHeader{
+    grid-row: 1/2;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 3%;
+    border-bottom: 1px solid black;
+    }
+    .inventoryBody{
+    grid-row: 2/3;
+    margin: 3% 3% 0 3%;
+    color: #9c9c9c;
+    }
+    .inventoryFooter{
+    grid-row: 3/4;
+    font-size: 20px;
+    margin: 0 3% 0 3%;
+    border-top: 1px solid black;
+    padding-top: 3%;
+    }
