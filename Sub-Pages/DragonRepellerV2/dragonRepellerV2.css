@@ -1,44 +1,6 @@
 /*
-@media only screen and (max-width: 480px) {
-  /* smartphones 
-  body > #game {
-    width: 100%;
-    height: auto;
-    margin: 3% 0 0 0;  
-  }
-  #stats{
-    font-size: 20px;
-  }
-  #text {
-    font-size: 20px;
-  }
-  #controls > button {
-    margin: 1% 0 0 0;
-    padding: 0;
-    font-size: 25px;
-  }
-}
-@media only screen and (min-width: 480px) and (max-width: 768px) {
-  /* smartphone landscape 
-  body > #game {
-    width: 95%;
-    height: auto; 
-    margin: 3% 0 0 3%;   
-  }
-  #stats{
-    font-size: 20px;
-  }
-  #text {
-    font-size: 20px;
-  }
-  #controls > button {
-    margin: 1% 0 0 0;
-    padding: 0;
-    font-size: 25px;
-  }
-}
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  /* tablet 
+  /* tablet
   body > #game {
     width: 75%;
     height: auto;    
@@ -56,7 +18,7 @@
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-  /* tablet 
+  /* tablet horizontal
   body > #game {
     width: 75%;
     height: auto;    
@@ -100,26 +62,47 @@ body {
       grid-area: 1/1/2/7;
       background-color: rgba(51, 51, 51,0.85);
       height: 40%;
-      text-align: center;
       border: var(--B1);
+      display: flex;
+      padding: 0.5% 1% 0 1%;
     }
-      div#leftStats {
-        display: flex;
+    .playerStats {
+      font-size: 20px;
+      color: gold;
+    }
+
+    strong {
+      color: #00bd48;
+    }
+
+      div.leftStats {
         justify-content: flex-start;
         width: 33%;
-        border: 2px solid red;
+        font-size: 20px;
       }
-      div#rightStats {
-        display: flex;
-        justify-content: flex-end;
-      }
-        .playerStats {
-          padding-right: 10px;
-          font-size: 20px;
-          color: gold;
+
+        #healthText {
+          padding-right: 20px;
         }
-          strong {
-            color: #00bd48;
+
+      div.centerStats {
+        justify-content: center;
+        width: 33%;
+        text-align: center;
+        font-size: 20px;
+        color: gold;
+        font-weight: bold;
+      }
+
+      div.rightStats {
+        justify-content: flex-end;
+        width: 33%;
+        text-align: right;
+        font-size: 20px;
+      }
+
+          #xpText { 
+            padding-right: 20px;
           }
 
     #monsterStatsContainer {
@@ -127,12 +110,13 @@ body {
       background-color: rgba(51, 51, 51,0.85);
       border: var(--B1);
       border-radius: 3%;
-      padding: 5px;
-      color: #ffffff;
+      color: gold;
+      font-weight: bold;
       background-color: #591c1c;
-      text-align: center;
       margin-top: 10.4%;
       height: 30%;
+      padding: 0.5% 1% 0% 2%;
+      display: flex;
     }
 
     #dialog{
@@ -146,7 +130,7 @@ body {
 
       .text {
         background-color: rgba(51, 51, 51,0.85);
-        color: #ce2323;
+        color: #00bd48;
         font-size: 25px;
         border-radius: 3%;
       }
@@ -155,13 +139,13 @@ body {
       grid-area: 6/2/7/5;
       color: #ffffff;
       width: 100%;
-      border: 2px solid green;
+      padding-top: 15%;
     }   
      
       #controls {
         border: 1px solid #0a0a23;
         border-radius: 7%;
-        padding: 10px;
+        padding: 10px 0;
         color: #ffb50a;
         text-align: center;
         background-color: rgba(51, 51, 51,0.85);
@@ -173,7 +157,7 @@ body {
         background-color: #feac32;
         background-image: linear-gradient(#fecc4c, #ffac33);
         border: 3px solid #feac32;
-        margin: 0 10% 0 0;
+        margin: 0 5% 0 5%;
         font-size: 20px;
       }
 
@@ -202,8 +186,8 @@ body {
     }
     .inventoryFooter{
     grid-row: 3/4;
-    font-size: 20px;
+    font-size: 17px;
     margin: 0 3% 0 3%;
     border-top: 1px solid black;
-    padding-top: 3%;
+    padding-top: 4%;
     }

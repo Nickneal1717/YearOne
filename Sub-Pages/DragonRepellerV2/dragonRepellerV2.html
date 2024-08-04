@@ -7,25 +7,35 @@
   </head>
   <body>
     <div id="gameContainer">
+      <!--Stats and Location Bar-->
       <section id="statsContainer">
-        <div id="leftStats">
+        <div class="leftStats">
           <span class="playerStats"><strong>Health: </strong><span id="healthText">100</span></span>
           <span class="playerStats"><strong>Gold: </strong><span id="goldText">50</span></span>
         </div>
-        <div id="rightStats">
+        <div class="centerStats">
+        <span class="currentLocation">Test</span>
+          </div>
+        <div class="rightStats">
           <span class="playerStats"><strong>XP: </strong><span id="xpText">0</span></span>
           <span class="playerStats"><strong>Level: </strong><span id="levelText">0</span>
         </div>
       </section>
+      <!--Dialog Box and Monster Stats-->
       <section id="dialog">
         <div class="text">
           Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
       </section>
       <section id="monsterStatsContainer">
-        <div>
+        <div class="leftStats">
           <span class="monsterStats">Monster Name: <strong><span id="monsterName">Slime</span></strong></span>
-          <span class="monsterStats">Health: <strong><span id="monsterHealth">100</span></strong></span>
+        </div>
+        <div class="centerStats">
+          <span class="monsterStats">Level: <strong><span id="monsterLevel">2</span></strong></span>
+        </div>
+        <div class="rightStats">
+          <span class="monsterStats">Health: <strong><span id="monsterHealth">123</span></strong></span>
         </div>
       </section>
       <section id="actionButtons">
@@ -40,7 +50,7 @@
       <section id="inventoryContainer">
         <div class="inventoryHeader">Inventory</div>
         <div class="inventoryBody">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo assumenda ex consequatur accusantium excepturi minus quaerat incidunt illo optio veritatis architecto, amet, quasi repellat provident similique laborum sunt sequi possimus?</div>
-        <div class="inventoryFooter">Hits Left: </div>
+        <div class="inventoryFooter">Current Weapon Durability: </div>
       </section>
     </div>
     <script src="dragonRepellerV2.js"></script>

@@ -115,7 +115,6 @@ let startingState = {
   currentWeapon: 0,
   inventory: [weapons[0]],
   location: travel.toTown
-  
 }
 
 let player = {};
@@ -351,7 +350,7 @@ const locations = [
 
 /* Location Updates */
 function update(location) {
-  button1.innerText = locations.buttonOptions;
+  button1.innerText = location.text;
   button2.innerText = locations.buttonOptions;
   button3.innerText = locations.buttonOptions;
   button1.onclick = location.buttonOptions[0];
