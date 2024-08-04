@@ -7,33 +7,33 @@
   </head>
   <body>
     <div id="gameContainer">
-      <section id="game">
-        <article>
-          <div id="stats">
-            <span class="stat"><strong>XP: </strong><span id="xpText">0</span></span>
-            <span class="stat"><strong>Health: </strong><span id="healthText">100</span></span>
-            <span class="stat"><strong>Gold: </strong><span id="goldText">50</span></span>
-            <span class="stat"><strong>Level: </strong><span id="levelText">0</span>
-          </div>
-        </article>
-        <article>
-          <div id="controls">
-            <button id="button1" data-id="1">Go to store</button>
-            <button id="button2" data-id="2">Go to cave</button>
-            <button id="button3" data-id="3">Fight dragon</button>
-          </div>
-        </article>
-        <article>
-          <div id="monsterStats">
-            <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-            <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-          </div>
-        </article>
+      <section>
+        <div id="statsContainer">
+          <span class="playerStats"><strong>XP: </strong><span id="xpText">0</span></span>
+          <span class="playerStats"><strong>Health: </strong><span id="healthText">100</span></span>
+          <span class="playerStats"><strong>Gold: </strong><span id="goldText">50</span></span>
+          <span class="playerStats"><strong>Level: </strong><span id="levelText">0</span>
+        </div>
       </section>
       <section id="dialog">
         <div class="text">
           Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
+      </section>
+      <section>
+        <div id="monsterStatsContainer">
+          <span class="monsterStats">Monster Name: <strong><span id="monsterName"></span></strong></span>
+          <span class="monsterStats">Health: <strong><span id="monsterHealth"></span></strong></span>
+        </div>
+      </section>
+      <section id="actionButtons">
+        <section>
+          <div id="controls">
+            <button id="button1" data-id="1">Go to store</button>
+            <button id="button2" data-id="2">Go to cave</button>
+            <button id="button3" data-id="3">Fight dragon</button>
+          </div>
+        </section>
       </section>
       <section id="inventoryContainer">
         <div class="inventoryHeader">Inventory</div>

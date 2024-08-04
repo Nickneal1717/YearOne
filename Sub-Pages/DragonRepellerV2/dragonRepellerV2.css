@@ -1,5 +1,6 @@
+/*
 @media only screen and (max-width: 480px) {
-  /* smartphones */
+  /* smartphones 
   body > #game {
     width: 100%;
     height: auto;
@@ -18,7 +19,7 @@
   }
 }
 @media only screen and (min-width: 480px) and (max-width: 768px) {
-  /* smartphone landscape */
+  /* smartphone landscape 
   body > #game {
     width: 95%;
     height: auto; 
@@ -37,7 +38,7 @@
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-  /* tablet */
+  /* tablet 
   body > #game {
     width: 75%;
     height: auto;    
@@ -55,7 +56,7 @@
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-  /* tablet */
+  /* tablet 
   body > #game {
     width: 75%;
     height: auto;    
@@ -71,7 +72,7 @@
     font-size: 25px;
   }
 }
-
+*/
 * {
   box-sizing: border-box;
 }
@@ -85,21 +86,61 @@ body {
   overflow: hidden;
 }
 
-  #gameContainer{
+  #gameContainer {
     height: 98vh;
     display: grid;
     grid-template-rows: 15% 15% 15% 15% 15% 25%;
     grid-template-columns: 20% 15% 15% 15% 15% 20%;
-    position: relative;
-    z-index: 2;
   }
-    #game {
+    #statsContainer {
+      border: 2px solid blue;
+      background-color: white;
+      padding: 10px;
+    }
+
+      .playerStats {
+        padding-right: 10px;
+        font-size: 20px;
+      }
+
+        strong {
+          color: #00bd48;
+        }
+
+    #monsterStatsContainer {
+      grid-area: 1/2/2/5;
+      border: 1px solid #0a0a23;
+      padding: 5px;
+      color: #ffffff;
+      background-color: #591c1c;
+    }
+
+    #dialog{
+      grid-area: 3/2/3/5;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+      .text {
+        background-color: rgba(51, 51, 51,0.85);
+        color: #ce2323;
+        font-size: 25px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 3%;
+      }
+
+    #actionButtons {
       grid-area: 6/2/7/5;
       margin: 0 0 0 1%;
       color: #ffffff;
       width: 100%;
-    }
-      #controls, #stats {
+      border: 2px solid green;
+    }   
+     
+      #controls {
         border: 1px solid #0a0a23;
         border-radius: 7%;
         padding: 10px;
@@ -107,20 +148,9 @@ body {
         text-align: center;
         background-color: rgba(51, 51, 51,0.85);
       }
-      strong {
-        color: #00bd48;
-      }
-      #monsterStats {
-        display: none;
-        border: 1px solid #0a0a23;
-        padding: 5px;
-        color: #ffffff;
-        background-color: #591c1c;
-      }
-        .stat {
-          padding-right: 10px;
-          font-size: 20px;
-        }
+
+  
+        
       button {
         cursor: pointer;
         color: #0a0a23;
@@ -130,21 +160,8 @@ body {
         margin: 0 10% 0 0;
         font-size: 20px;
       }
-    #dialog{
-      grid-area: 2/2/3/5;
-      display: flex;
-      width: 100%;
-      align-items: center;
-      text-align: center;
-    }
-      .text {
-        background-color: rgba(51, 51, 51,0.85);
-        color: #00bd48;
-        font-size: 25px;
-        padding: 10px;
-        border: 2px solid black;
-        border-radius: 3%;
-      }
+    
+
   #inventoryContainer{
     grid-area: 3/6/7/7;
     background-color: rgba(51, 51, 51,0.85);
