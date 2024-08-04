@@ -77,6 +77,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --B1: 2px solid black;
+}
+
 body {
   background-color: #0a0a23;
   background-image: url("../../Assets/Images/townSquare1.jpg");
@@ -93,48 +97,62 @@ body {
     grid-template-columns: 20% 15% 15% 15% 15% 20%;
   }
     #statsContainer {
-      border: 2px solid blue;
-      background-color: white;
-      padding: 10px;
+      grid-area: 1/1/2/7;
+      background-color: rgba(51, 51, 51,0.85);
+      height: 40%;
+      text-align: center;
+      border: var(--B1);
     }
-
-      .playerStats {
-        padding-right: 10px;
-        font-size: 20px;
+      div#leftStats {
+        display: flex;
+        justify-content: flex-start;
+        width: 33%;
+        border: 2px solid red;
       }
-
-        strong {
-          color: #00bd48;
+      div#rightStats {
+        display: flex;
+        justify-content: flex-end;
+      }
+        .playerStats {
+          padding-right: 10px;
+          font-size: 20px;
+          color: gold;
         }
+          strong {
+            color: #00bd48;
+          }
 
     #monsterStatsContainer {
       grid-area: 1/2/2/5;
-      border: 1px solid #0a0a23;
+      background-color: rgba(51, 51, 51,0.85);
+      border: var(--B1);
+      border-radius: 3%;
       padding: 5px;
       color: #ffffff;
       background-color: #591c1c;
+      text-align: center;
+      margin-top: 10.4%;
+      height: 30%;
     }
 
     #dialog{
-      grid-area: 3/2/3/5;
+      grid-area: 2/2/3/5;
+      border: var(--B1);
       display: flex;
       width: 100%;
-      align-items: center;
       text-align: center;
+      border-radius: 3.5%;
     }
 
       .text {
         background-color: rgba(51, 51, 51,0.85);
         color: #ce2323;
         font-size: 25px;
-        padding: 10px;
-        border: 2px solid black;
         border-radius: 3%;
       }
 
     #actionButtons {
       grid-area: 6/2/7/5;
-      margin: 0 0 0 1%;
       color: #ffffff;
       width: 100%;
       border: 2px solid green;
@@ -148,8 +166,6 @@ body {
         text-align: center;
         background-color: rgba(51, 51, 51,0.85);
       }
-
-  
         
       button {
         cursor: pointer;
@@ -160,7 +176,6 @@ body {
         margin: 0 10% 0 0;
         font-size: 20px;
       }
-    
 
   #inventoryContainer{
     grid-area: 3/6/7/7;

@@ -7,11 +7,13 @@
   </head>
   <body>
     <div id="gameContainer">
-      <section>
-        <div id="statsContainer">
-          <span class="playerStats"><strong>XP: </strong><span id="xpText">0</span></span>
+      <section id="statsContainer">
+        <div id="leftStats">
           <span class="playerStats"><strong>Health: </strong><span id="healthText">100</span></span>
           <span class="playerStats"><strong>Gold: </strong><span id="goldText">50</span></span>
+        </div>
+        <div id="rightStats">
+          <span class="playerStats"><strong>XP: </strong><span id="xpText">0</span></span>
           <span class="playerStats"><strong>Level: </strong><span id="levelText">0</span>
         </div>
       </section>
@@ -20,10 +22,10 @@
           Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
       </section>
-      <section>
-        <div id="monsterStatsContainer">
-          <span class="monsterStats">Monster Name: <strong><span id="monsterName"></span></strong></span>
-          <span class="monsterStats">Health: <strong><span id="monsterHealth"></span></strong></span>
+      <section id="monsterStatsContainer">
+        <div>
+          <span class="monsterStats">Monster Name: <strong><span id="monsterName">Slime</span></strong></span>
+          <span class="monsterStats">Health: <strong><span id="monsterHealth">100</span></strong></span>
         </div>
       </section>
       <section id="actionButtons">
