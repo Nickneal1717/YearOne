@@ -23,7 +23,7 @@
       </section>
       <!--Dialog Box and Monster Stats-->
       <section id="dialog">
-        <div class="text">
+        <div class="dialogText">
           Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
       </section>
@@ -41,9 +41,9 @@
       <section id="actionButtons">
         <section>
           <div id="controls">
-            <button id="button1" data-id="1">Go to store</button>
-            <button id="button2" data-id="2">Go to cave</button>
-            <button id="button3" data-id="3">Fight dragon</button>
+            <button id="button1" onclick="availableButtons.toStore">Go to Store</button>
+            <button id="button2" onclick="availableButtons.toCave">Go to cave</button>
+            <button id="button3" onclick="fight.goFight">Fight Monsters</button>
           </div>
         </section>
       </section>
