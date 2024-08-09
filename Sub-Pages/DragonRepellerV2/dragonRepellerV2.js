@@ -16,13 +16,13 @@ const button2 = document.querySelector("#button2");
 /* Travel Functions */
 let travel = {
   toStore: function() {
-    update(availableButtons[0]);
+    update(locations[0]);
   },
   toCave: function() {
-    update(availableButtons[1]);
+    update(locations[1]);
   },
   toTown: function() {
-    update(availableButtons[2]);
+    update(locations[2]);
   }
 }
 
@@ -35,7 +35,7 @@ let storeActions = {
       goldText.innerText = gold;
       healthText.innerText = health;
     } else {
-      text.innerText = "You do not have enough gold to buy health.";
+      dialogText.innerText = "You do not have enough gold to buy health.";
     }
   },
   buyWeapon: function() {
@@ -45,14 +45,14 @@ let storeActions = {
         currentWeapon++;
         goldText.innerText = gold;
         let newWeapon = weapons[currentWeapon].name;
-        text.innerText = "You now have a " + newWeapon + ".";
+        dialogText.innerText = "You now have a " + newWeapon + ".";
         inventory.push(newWeapon);
-        text.innerText += " In your inventory you have: " + inventory;
+        dialogText.innerText += " In your inventory you have: " + inventory;
       } else {
-        text.innerText = "You do not have enough gold to buy a weapon.";
+        dialogText.innerText = "You do not have enough gold to buy a weapon.";
       }
     } else {
-      text.innerText = "You already have the most powerful weapon!";
+      dialogText.innerText = "You already have the most powerful weapon!";
       button2.innerText = "Sell weapon for 15 gold";
       button2.onclick = sellWeapon;
     }
@@ -62,35 +62,16 @@ let storeActions = {
       gold += 15;
       goldText.innerText = gold;
       let currentWeapon = inventory.shift();
-      text.innerText = "You sold a " + currentWeapon + ".";
-      text.innerText += " In your inventory you have: " + inventory;
+      dialogText.innerText = "You sold a " + currentWeapon + ".";
+      dialogText.innerText += " In your inventory you have: " + inventory;
     } else {
-      text.innerText = "Don't sell your only weapon!";
+      dialogText.innerText = "Don't sell your only weapon!";
     }
   }
 }
 
+
 availableButtons = [
-{
-  buttonId: 1,
-  locationName: "store",
-  buttonText: "Go to Town",
-  dialogText: "You enter the store.",
-  buttonFunction: travel.toTown
-},
-{
-  locationName: "cave",
-  buttonText: "Go to Town",
-  dialogText: "You enter the cave. You see monster everywhere. You will need to choose a starting point for your quest.",
-  buttonFunction: travel.toTown
-},
-{
-  buttonId: 3,
-  locationName: "town square",
-  buttonText: ["Go to Shop","Go to Cave"],
-  dialogText: "You are in the town square. You see a sign that says \"Store\".",
-  buttonFunction: [travel.toStore, travel.toTown]
-},
 {
   buttonId: 4,
   buttonText: "Buy Health",
@@ -102,6 +83,7 @@ availableButtons = [
   buttonFunction: storeActions.buyWeapon
 }
 ]
+
 
 /* Weapons */
 const weapons = [
@@ -125,69 +107,6 @@ let startingState = {
 let player = {};
 Object.assign(player, startingState)
 
-/* Initialize Buttons */
-button1.onclick = travel.toStore;
-button2.onclick = travel.toCave;
-
-/* Location Updates */
-function update(location) {
-  monsterStatsContainer.style.display = "none";
-  button1.innerText = location["buttonText"];
-  button2.innerText = location["buttonText"];
-  button1.onclick = location["buttonFunction"];
-  button2.onclick = location["buttonFunction"];
-  dialogText.innerHTML = location["dialogText"];
-}
-
-/*Game Actions*/
-let gameActions = {
-  
-  lose: function() {
-   update(battle[2]);
- },
- winGame: function() {
-   update(battle[3]);
- },
-   restart: function() {
-    Object.assign(player, startingState)
- }
- }
-
- /* Easter Egg */
-let easterEggTrigger = {
-  easterEgg: function() {
-    update(battle[4]);
-  },
-  pickTwo: function() {
-    pick(2);
-  },
-  pickEight: function() {
-    pick(8);
-  },
-  pick: function(guess) {
-    const numbers = [];
-    while (numbers.length < 10) {
-      numbers.push(Math.floor(Math.random() * 11));
-    }
-    text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-    for (let i = 0; i < 10; i++) {
-      dialogText.innerText += numbers[i] + "\n";
-    }
-    if (numbers.includes(guess)) {
-      dialogText.innerText += "Right! You win 20 gold!";
-      gold += 20;
-      goldText.innerText = gold;
-    } else {
-      dialogText.innerText += "Wrong! You lose 10 health!";
-      health -= 10;
-      healthText.innerText = health;
-      if (health <= 0) {
-        lose();
-      }
-    }
-  }
-}
-
 /* Battle Actions */
 let fight = {
   goFight: function (monsterId) {
@@ -196,6 +115,7 @@ let fight = {
     monsterStats.style.display = "block";
     monsterName.innerText = monsters[fighting].name;
     monsterHealthText.innerText = monsterHealth;
+    button3.display.style = "none"
   },
   attack: function() {
     dialogText.innerText = "The " + monsters[fighting].name + " attacks.";
@@ -231,40 +151,6 @@ let fight = {
     update(battle[1]);
   }
 }
-
-/* Battle */
-const battle = [
-  {
-    name: "fight",
-    buttonText: ["Attack", "Run"],
-    buttonFunctions: [fight.attack, travel.toTown],
-    text: `You are fighting a ${monsters.name}.`
-  },
-  {
-    name: "kill monster",
-    buttonText: ["Go to town square"],
-    buttonFunctions: [travel.toTown],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
-  },
-  {
-    name: "lose",
-    buttonText: ["REPLAY?"],
-    buttonFunctions: [gameActions.restart],
-    text: "You die. &#x2620;"
-  },
-  { 
-    name: "win", 
-    buttonText: ["REPLAY?"], 
-    buttonFunctions: [gameActions.restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
-  },
-  /*{
-    name: "easter egg",
-    buttonText: ["2", "8", "Go to town square?"],
-    buttonFunctions: [easterEggTrigger.pickTwo, easterEggTrigger.pickEight, travel.toTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
-  }*/
-]
 
 /* Monsters */
 const monsters = [
@@ -322,3 +208,131 @@ const monsters = [
     }
   }
 ]
+
+/* Locations */
+const locations = [
+  {
+    locationId: 0,
+    locationName: "store",
+    buttonText: ["Go to Town"],
+    buttonFunction: travel.toStore,
+    dialogText: "You enter the store.",
+  },
+  {
+    locationId: 1,
+    locationName: "town square",
+    buttonText: ["Go to Shop","Go to Cave"],
+    buttonFunction: [travel.toTown, travel.toCave],
+    dialogText: "You are in the town square. To your left you see a building with a sign that says \"Store\". To you right you see a sign post that says \"Cave\".",
+  },
+  {
+    locationId: 2,
+    name: "cave",
+    buttonText: ["Fight slime", "Fight goblin", "Go to Town"],
+    buttonFunction: [monsters[0], monsters[1], travel.toTown],
+    dialogText: "You enter the cave. You see monster everywhere. You will need to choose a starting point for your quest.",
+  }
+]
+
+/* Initialize Buttons */
+button1.onclick = travel.toStore;
+button2.onclick = travel.toCave;
+button3.onclick = fight.goFight;
+
+/* Location Updates */
+function update(updateLocation) {
+  monsterStatsContainer.style.display = "none";
+  button1.innerText = updateLocation["buttonText"][0];
+  button2.innerText = updateLocation["buttonText"][1];
+  button3.innerText = updateLocation["buttonText"][2];
+  button1.onclick = updateLocation["buttonFunction"][0];
+  button2.onclick = updateLocation["buttonFunction"][1];
+  button3.onclick = updateLocation["buttonFunction"][2];
+  dialogText.innerHTML = updateLocation["dialogText"];
+}
+
+/*Game Actions*/
+let gameActions = {
+  
+  lose: function() {
+   update(battle[2]);
+ },
+ winGame: function() {
+   update(battle[3]);
+ },
+   restart: function() {
+    Object.assign(player, startingState)
+ }
+ }
+
+ /* Easter Egg */
+let easterEggTrigger = {
+  easterEgg: function() {
+    update(battle[4]);
+  },
+  pickTwo: function() {
+    pick(2);
+  },
+  pickEight: function() {
+    pick(8);
+  },
+  pick: function(guess) {
+    const numbers = [];
+    while (numbers.length < 10) {
+      numbers.push(Math.floor(Math.random() * 11));
+    }
+    text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+    for (let i = 0; i < 10; i++) {
+      dialogText.innerText += numbers[i] + "\n";
+    }
+    if (numbers.includes(guess)) {
+      dialogText.innerText += "Right! You win 20 gold!";
+      gold += 20;
+      goldText.innerText = gold;
+    } else {
+      dialogText.innerText += "Wrong! You lose 10 health!";
+      health -= 10;
+      healthText.innerText = health;
+      if (health <= 0) {
+        lose();
+      }
+    }
+  }
+}
+
+
+
+/* Battle */
+const battle = [
+  {
+    name: "fight",
+    buttonText: ["Attack", "Run"],
+    buttonFunctions: [fight.attack, travel.toTown],
+    text: `You are fighting a ${monsters.name}.`
+  },
+  {
+    name: "kill monster",
+    buttonText: ["Go to town square"],
+    buttonFunctions: [travel.toTown],
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+  },
+  {
+    name: "lose",
+    buttonText: ["REPLAY?"],
+    buttonFunctions: [gameActions.restart],
+    text: "You die. &#x2620;"
+  },
+  { 
+    name: "win", 
+    buttonText: ["REPLAY?"], 
+    buttonFunctions: [gameActions.restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! &#x1F389;" 
+  },
+  /*{
+    name: "easter egg",
+    buttonText: ["2", "8", "Go to town square?"],
+    buttonFunctions: [easterEggTrigger.pickTwo, easterEggTrigger.pickEight, travel.toTown],
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+  }*/
+]
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="us">
+  <style>
+    *{
+        box-sizing: border-box;
+    }
+    @media (min-width: 495px) {
+    #navbar {
+        left: 0;}}
+
+    body{
+        background-color: rgb(215, 215, 215);
+        color: black;
+        font-family: sans-serif;}
+
+    code {
+        font-family: sans-serif;
+        font-weight: bold;}
+    
+    .container {
+        display: grid;
+        grid-template-columns: 7rem auto 4rem;
+        grid-template-rows: 3rem auto;
+    }
+        #navbar {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            position: fixed;
+            border-right-style: solid;
+            border-right-color: black;
+            border-right-width: 1px;
+            height: 100%;
+        }
+            #navbar > header {
+                font-weight: bold;
+                font-size: 20px;
+                padding-right: 10px;
+            }
+            #navbar > hr {
+                margin-bottom: 0;
+            }
+            #navbar > div {
+                margin-top: 1px;
+                text-align: left;
+                padding: 20px 10px 20px 10px;
+                font-size: 20px;
+                border-bottom-style: solid;
+                border-color: black;
+                border-width: 1px;
+                background-color: rgb(200, 200, 200);
+            }
+                #navbar > div:hover a:hover {
+                    background: blue;
+                    color: white;
+                }
+            #navbar > div> a {
+                text-decoration: none;
+                color: #4d4e53;
+            }
+
+        #items {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            margin: 25px 10px 0 25px;
+        }
+        .item-P {
+            padding: 10px;
+        }
+
+    </style>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Pet Selection</title>    
+    </head>
+  <body>
+    <main id="main-doc">
+        <div class="container">
+            <nav id="navbar">
+                <header>Choose a Pet</header>
+                <hr>
+                <div><a class="nav-link" href="#dogs">Dogs</a></div>
+                <div><a class="nav-link" href="#cats">Cats</a></div>
+                <div><a class="nav-link" href="#birds">Birds</a></div>
+                <div><a class="nav-link" href="#reptiles">Reptiles</a></div>
+                <div><a class="nav-link" href="#rodents">Rodents</a></div>
+            </nav>
+            <div id="items">
+                <section class="main-section" id="dogs">
+                    <div class="item-P">
+                        <header><h2>Dogs</h2></header>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt sint excepturi provident magni, laboriosam aspernatur voluptatem praesentium quasi. Dolorum magnam illum exercitationem aut ea eius voluptatibus fuga non suscipit vero!</p>
+                        <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="main-section" id="cats">
+                    <div class="item-P">
+                        <header><h2>Cats</h2></header>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit reprehenderit aliquam suscipit aspernatur veniam fugiat doloribus blanditiis, voluptatibus similique vero, qui hic eum cupiditate? Ipsum pariatur corporis libero maxime enim?</p>
+                        <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="main-section" id="birds">
+                    <div class="item-P">
+                        <header><h2>Birds</h2></header>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi dicta possimus fuga est quia. Necessitatibus fugiat impedit perspiciatis earum unde, dolorum est qui, saepe dignissimos nesciunt reiciendis eius placeat ea.</p>
+                        <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        </ul>
+                    </dv>
+                </section>
+                <section class="main-section" id="reptiles">
+                    <div class="item-P">
+                        <header><h2>Reptiles</h2></header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, consequatur! Reiciendis autem, minus architecto, ea molestias quidem tempore culpa excepturi, libero qui totam ducimus corrupti incidunt voluptate aliquid facilis magnam.</p>
+                        <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="main-section" id="rodents">
+                    <div class="item-P">
+                        <header><h2>Rodents</h2></header>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo totam odit sit error optio, ipsum doloremque. Delectus repellat quam ipsam voluptatem eveniet ex fugit, cum mollitia, possimus nulla, eum rerum!</p>
+                        <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+      </main>
+    </body>
+  </html>
